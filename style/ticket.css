@@ -1,0 +1,274 @@
+/* Color Palette taken from:
+https://coolors.co/8eb1c7-b02e0c-eb4511-c1bfb5-fefdff
+ */
+
+/* 1. GENERAL STYLES/SETUP */
+
+html {
+    box-sizing:border-box;
+}
+*, *::before, *::after {
+    box-sizing:inherit;
+}
+
+.hidden {
+    position:absolute;
+    left:-10000px;
+    width:1px;
+    height:1px;
+}
+
+body {
+    margin:0;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: normal;
+    font-size: 1em;
+    line-height: 1.2;
+    background-color: honeydew;
+}
+
+/* -- 1a. Common classes */
+.page-wrapper {
+    max-width:1000px;
+    margin:0 auto;
+    position:relative;
+    margin-bottom: 2em;
+}
+
+/* 2. Header */
+#header {
+    background-color:#8EB1C7;
+}
+
+#header .page-wrapper {
+    padding: 2.875em 0em;
+}
+
+#main-navigation {
+    position:absolute;
+
+    top:2em;
+}
+
+#main-navigation .menu {
+    margin:0;
+    padding:0;
+}
+
+#main-navigation li {
+    display:inline-block;
+    list-style-type:none;
+    padding-left:1em;
+    font-size:1.75em;
+}
+
+a {
+    text-decoration: none;
+}
+
+#main-navigation a {
+    color:#FEFDFF;
+}
+
+#main-navigation a:hover {
+    color: chocolate;
+}
+
+/* 3. Main Body */
+main {
+    background-color: #FEFDFF;
+    border: 2px ridge #8EB1C7;
+    margin-top: 2em;
+    padding: 1em;
+}
+
+table {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+th {
+    padding: 0.5em 1.25em;
+}
+
+#header-row {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+td {
+    padding: 0 0.5em;
+    text-align: center;
+}
+
+fieldset {
+    background-color: #f1f1f1;
+    border: 1px solid #006BA6;
+    border-radius: 2px;
+    margin : 1em 0;
+    overflow: hidden;
+    padding: 0 .75em;
+}
+
+
+/*Button Style partly taken from Bootstrap library
+https://github.com/twbs/bootstrap/blob/main/dist/css/bootstrap.css
+*/
+/* 3a. Button */
+.btn {
+    display: inline-block;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    cursor: pointer;
+    user-select: none;
+    background-color: transparent;
+    border: 1px solid transparent;
+    padding: 0.1em 0.5em;
+    margin: 0.5em;
+    font-size: 1rem;
+    border-radius: 0.25rem;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.btn-success {
+    color: #fff;
+    background-color: #198754;
+    border-color: #198754;
+}
+.btn-success:hover {
+    color: #fff;
+    background-color: #157347;
+    border-color: #146c43;
+}
+
+form {
+    margin-bottom:0;
+}
+
+.status {
+    font-weight: bold;
+}
+
+.values {
+    color: #B02E0C;
+    text-transform: capitalize;
+    font-weight: bold;
+}
+
+.message-div {
+    background-color: #DEE2FF;
+    padding: 1em;
+    border: 1px solid #8E9AAF;
+    border-radius: 1em;
+    margin-bottom: 1.5em;
+}
+
+.message {
+    margin-bottom:0;
+}
+
+.message-head {
+    margin : 0;
+    text-decoration: underline;
+}
+
+.msg-coll {
+    padding: 0 1.5em;
+    border: 1px solid #006BA6;
+    margin: 1em 0;
+}
+
+/* 4. Log In Page Form Styling*/
+.fields {
+    background-color: #fff;
+    border: 1px solid azure;
+    margin: 1em;
+    padding: 1em;
+}
+.fields .row {
+    margin: 0.5em 0;
+}
+
+label {
+    cursor: pointer;
+    display: inline-block;
+    padding: 0.2em 0.4em;
+    text-align: right;
+    width: 125px;
+    vertical-align: top;
+}
+
+.field-large {
+    width: 250px;
+}
+
+.field-msg {
+    width: 85%;
+}
+
+.hdr {
+    background-color: #006BA6;
+    color: #FEFDFF;
+    padding: 0.25em;
+    text-align: center;
+}
+
+#btn-login {
+    margin-left:290px;
+}
+
+#validation, #welcomMsg {
+    font-weight: bold;
+}
+
+.validation {
+    color: darkred;
+    font-weight: bold;
+}
+
+#welcomMsg {
+    color: forestgreen;
+    display: inline-block;
+}
+
+#form-logout {
+    float: right;
+}
+
+.btn-logout {
+    color: #fff;
+    background-color: darkred;
+    border-color: saddlebrown;
+}
+
+/* 5. Styling for Ticket Details*/
+#back-link {
+    color : blue;
+    font-weight: bold;
+    font-size: 1.35em;
+    display: block;
+    text-align: center;
+    background-color: aliceblue;
+    padding: 0.5em;
+}
+
+#back-link:hover {
+    color: #B02E0C;
+}
+
+#form-close {
+    font-weight: bold;
+    font-size: 1.2em;
+    padding: 0.5em;
+    float:right;
+}
+
+select {
+    width: 150px;
+}
+
+

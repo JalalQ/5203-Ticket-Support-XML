@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- XML file storing the details about the tickets - specifically the messages.
+	Written by: Jalaluddin Qureshi, Assignment 1 Final. http5203 (Winter 2021), Humber College -->
+<!--id - uniquely identified each of the ticket.
+    creatorUsername - uniquely identifies the user through his username who created the ticket.
+    status - categorical attribute which can one of the two values: Open or Closed-->
+<!-- authorUsername uniquely identifies the user who wrote the message-->
+<tickets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../schema/ticket.xsd">
+  <ticket id="1" creatorUserName="karen293" status="Close">
+    <issue category="battery" urgent="no">
+      <subject>Laptop battery discharging fast</subject>
+      <issueDescription>
+			My laptop's battery runs out within 30 mins of full charging. I am using the charger provided by the company to me.
+      </issueDescription>
+      <dateTimeOfIssue>2020-02-22T08:29:12</dateTimeOfIssue>
+    </issue>
+    <messages>
+      <message authorUsername="j.brock">
+        <dateTimeOfMessage>2020-02-22T09:03:39</dateTimeOfMessage>
+        <messageContent>
+				I am sorry to hear about this. Could you please provide me the ID of the laptop issued to you.
+        </messageContent>
+      </message>
+      <message authorUsername="karen293">
+        <dateTimeOfMessage>2021-04-05T12:44:06</dateTimeOfMessage>
+        <messageContent>The laptop ID is A198.</messageContent>
+      </message>
+      <message authorUsername="j.brock">
+        <dateTimeOfMessage>2021-04-05T15:13:24</dateTimeOfMessage>
+        <messageContent>Thank you. If you come down to my office, I would be happy to issue you a new laptop.</messageContent>
+      </message>
+    </messages>
+  </ticket>
+  <ticket id="2" status="Open" creatorUserName="jim5">
+    <issue category="battery" urgent="no">
+      <subject>Internet Connection Issue</subject>
+      <issueDescription>
+				My laptop's battery runs out within 30 mins of full charging. I am using the charger provided by the company to me.
+      </issueDescription>
+      <dateTimeOfIssue>2020-03-05T08:29:12</dateTimeOfIssue>
+    </issue>
+    <messages>
+      <message authorUsername="j.brock">
+        <dateTimeOfMessage>2020-02-22T09:03:39</dateTimeOfMessage>
+        <messageContent>
+					I am sorry to hear about this. Could you please provide me the ID of the laptop issued to you.
+        </messageContent>
+      </message>
+    </messages>
+  </ticket>
+  <ticket id="3" creatorUserName="karen293" status="Open">
+    <issue category="internet" urgent="yes">
+      <subject>Wi-Fi Connectivity</subject>
+      <issueDescription>My Internet has been slow since morning.</issueDescription>
+      <dateTimeOfIssue>2021-04-05T14:52:50</dateTimeOfIssue>
+    </issue>
+  </ticket>
+  <ticket id="4" creatorUserName="jim5" status="Open">
+    <issue category="printer" urgent="yes">
+      <subject>Printer out of Paper</subject>
+      <issueDescription>The printer located on the second floor is out of papers.</issueDescription>
+      <dateTimeOfIssue>2021-04-05T15:34:04</dateTimeOfIssue>
+    </issue>
+  </ticket>
+</tickets>

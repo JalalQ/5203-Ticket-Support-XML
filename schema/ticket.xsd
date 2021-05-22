@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="tickets">
+		<xs:complexType>
+			<xs:sequence>
+			
+				<xs:element name="ticket" minOccurs="0" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+						
+							<!-- Each ticket exactly one issue (original message) associated with it. -->
+							<xs:element name="issue">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="subject" type="xs:string" />										
+										<xs:element name="issueDescription" type="xs:string" />
+										<xs:element name="dateTimeOfIssue" type="xs:dateTime" />
+									</xs:sequence>
+									
+									<xs:attribute name="category" type="ticketCategory" />
+									<xs:attribute name="urgent" type="urgency" />
+								</xs:complexType>
+							</xs:element>
+							
+							<xs:element name="messages" minOccurs="0" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:sequence>
+										
+										<xs:element name="message" maxOccurs="unbounded">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="dateTimeOfMessage" type="xs:dateTime" />										
+													<xs:element name="messageContent" type="xs:string" />
+												</xs:sequence>
+									
+												<xs:attribute name="authorUsername" type="xs:token" />
+											</xs:complexType>
+										</xs:element>
+
+									</xs:sequence>
+									<!-- authorUsername and creatorUserName are both of the same type -->
+									<xs:attribute name="authorUsername" type="xs:token" />
+								</xs:complexType>
+							</xs:element>
+						
+						</xs:sequence>
+						
+						<!-- With unsignedLong we can create upto 10^21 (Sextillion) unique ids. -->
+						<xs:attribute name="id" type="xs:positiveInteger" />
+						<xs:attribute name="status" type="xs:string" />
+						<xs:attribute name="creatorUserName" type="xs:token" />
+					</xs:complexType>
+				</xs:element>
+				
+			
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<!-- ticketCategory is a categorical field. Some representative fields are listed below. -->
+	<xs:simpleType name="ticketCategory">
+		<xs:restriction base="xs:token">
+			<xs:enumeration value="battery" />
+			<xs:enumeration value="internet" />
+			<xs:enumeration value="software" />
+			<xs:enumeration value="printer" />
+			<xs:enumeration value="screen" />
+		</xs:restriction>
+	</xs:simpleType>
+	
+	
+	<!-- urgency is a categorical field. -->
+	<xs:simpleType name="urgency">
+		<xs:restriction base="xs:token">
+			<xs:enumeration value="yes" />
+			<xs:enumeration value="no" />
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="status">
+		<xs:restriction base="xs:token">
+			<xs:enumeration value="Open" />
+			<xs:enumeration value="Closed" />
+		</xs:restriction>
+	</xs:simpleType>
+	
+</xs:schema>
+
+

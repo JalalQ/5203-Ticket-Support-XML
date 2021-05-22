@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="users">
+		<xs:complexType>
+			<xs:sequence>
+			
+				<xs:element name="user" minOccurs="0" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+						
+							<!-- code structure for empty element with attribute, taken from:
+								https://www.w3schools.com/XML/schema_complex_empty.asp -->
+							<xs:element name="logInDetails" >
+								<xs:complexType>
+									 <xs:attribute name="userName" type="xs:token"/>
+									 <xs:attribute name="userType" type="userPrivilage" />
+									 <xs:attribute name="userPassword" type="md5hash"/>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="name">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="firstName" type="xs:string" />										
+										<xs:element name="middleName" type="xs:string" minOccurs="0" />
+										<xs:element name="lastName" type="xs:string" />
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						
+						</xs:sequence>
+
+						<xs:attribute name="userEmail" type="email" />
+					</xs:complexType>
+				</xs:element>
+				
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	
+	<!-- Custom Data Types -->
+	<!-- MD5 password hash is always 32 character long. -->
+	<xs:simpleType name="md5hash">
+		<xs:restriction base="xs:token">
+			<xs:length value="32"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<!-- Email regular expression taken from,
+	https://regexlib.com/REDetails.aspx?regexp_id=167 -->
+	<xs:simpleType name="email">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<!-- userType has one of the two categorical data - admin or client -->
+	<xs:simpleType name="userPrivilage">
+		<xs:restriction base="xs:token">
+			<xs:enumeration value="admin" />
+			<xs:enumeration value="client" />
+		</xs:restriction>
+	</xs:simpleType>
+					
+</xs:schema>

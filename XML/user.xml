@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!-- XML file storing the details of the users for a "support ticket application.
+	Written by: Jalaluddin Qureshi, Assignment 1 Final, http5203 (Winter 2021), Humber College -->
+
+<!-- There are two categories of users: admin and clients.
+    All users are uniquely identified by their username (equivalent of user ID)	-->
+
+<!-- User passwords are "hashed" and generated using this online tool.
+    https://passwordsgenerator.net/md5-hash-generator/ -->
+
+<!-- PLAIN-TEXT PASSWORDS:
+     j.brock plain-text password is "****" (3f37)
+     karen293 plain-text password is '****" (cc96)
+     jim5 plain-text password is "****" (34d6)
+     -->
+<users xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../schema/user.xsd">
+	
+	<user userEmail="j.brock@gmail.com">
+		<logInDetails userName="j.brock" userType="admin" userPassword="f6432274349b5cb93433f8ed886a3f37"/>
+		<name>
+			<firstName>John</firstName>
+			<lastName>Brock</lastName>
+		</name>
+	</user>
+	
+	<user userEmail="karen.s@yahoo.ca">
+		<logInDetails userName="karen293" userType="client" userPassword="6b1628b016dff46e6fa35684be6acc96"/>
+		<name>
+			<firstName>Karen</firstName>
+			<middleName>Kate</middleName>
+			<lastName>Brown</lastName>
+		</name>
+	</user>
+
+	<user userEmail="jim89@yahoo.ca">
+		<logInDetails userName="jim5" userType="client" userPassword="2a2d595e6ed9a0b24f027f2b63b134d6"/>
+		<name>
+			<firstName>Jim</firstName>
+			<lastName>Clark</lastName>
+		</name>
+	</user>
+	
+</users>
