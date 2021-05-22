@@ -1,6 +1,6 @@
 # 5203-Ticket-Support-XML
 
-Ticket Support System with admin/ user log in functionality implemented using XML and PHP. A user can submit a ticket, which can be viewed by the user who submitted it as well as the admin user. For each ticket, the admin and the user can exchange messages, to discuss and resolve the issue. Once the ticket is closed, the admin can click on the "Close Ticket" button to close the ticket.
+Ticket Support System with admin/ user log in functionality implemented using XML and [PHP DOM](https://www.php.net/manual/en/book.dom.php). A user can submit a ticket, which can be viewed by the user who submitted it as well as the admin user. For each ticket, the admin and the user can exchange messages, to discuss and resolve the issue. Once the ticket is closed, the admin can click on the "Close Ticket" button to close the ticket.
 
 Both the admin and clients users can see the list of tickets, once they log in. CSS was used to improve the visual representation of the pages. PHP was used to create dynamic pages.
 
