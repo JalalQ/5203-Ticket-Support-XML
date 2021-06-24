@@ -44,7 +44,11 @@ if (isset($_POST['newTicket'])) {
     $issue->appendChild($newTimeMsg);
 
     $ticket->appendChild($issue);
-
+	
+	//Add messages elements, so whenever a new message is created, it would be appended inside it.
+	$messages = $doc->createElement("messages");
+	$ticket->appendChild($messages);
+	
     $root->appendChild($ticket);
 
     $doc->save("XML/ticket.xml");
